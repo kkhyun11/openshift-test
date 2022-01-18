@@ -135,7 +135,7 @@
 
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="/proc/self/fd"
            prefix="1" suffix="" rotatable="false" requestAttributesEnabled="true"
-           pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+           pattern="%h %l %u %t %{X-Forwarded-For}i %{X-Forwarded-Host}i %{X-Forwarded-Proto}i &quot;%r&quot; %s %b" />
 
         <Valve className="org.apache.catalina.valves.ErrorReportValve" showReport="false"
                showServerInfo="false" />
